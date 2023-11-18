@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site 1</title>
+    <style>
+        body{
+            text-align: center;
+            background: rgb(130, 130, 196);
+            font: normal 16px Arial;
+            
+        }
+
+        body h2{
+            color: aliceblue;
+        }
+        header{
+            color: white;
+            text-align: center;
+        }
+
+        section{
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 15pt;
+            margin: auto;
+            width: 500px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.61);
+        }
+
+        footer{
+            color: aliceblue;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body onload="carregar()">
+    <h2>Hora do dia</h2>
+    <header id="hora"></header>
+    
+    <section>
+        <div id="msg">
+            
+        </div>
+        <div id="foto">
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy;felipechanfrone</p>
+    </footer>
+    <script>
+        function carregar(){
+        var msg = document.getElementById('msg')
+        var foto = document.getElementById('foto')
+        var data = new Date()
+        var hora = data.getHours();
+         msg.innerHTML = `Agora são ${hora} horas!`
+
+         if (hora < 12 && hora > 3) {
+            foto.innerHTML = `<img src="imagens/manha.png" alt="">`
+            document.body.style.background = '#cf861e'
+         } else if (hora >= 12 && hora < 18){
+            foto.innerHTML = `<img src="imagens/tarde.png" alt="">`
+            document.body.style.background = '#DE6450'
+         } else {
+            foto.innerHTML = `<img src="imagens/noite.png" alt="">`
+            document.body.style.background = '#044855'
+         }
+
+        }
+
+
+
+        
+    </script>
+</body>
+</html>
